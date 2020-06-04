@@ -24,4 +24,4 @@ jobs:
 
       - run: bundle install
 
-      - run: bundle exec rake default
+      - run: bundle exec rake quick
