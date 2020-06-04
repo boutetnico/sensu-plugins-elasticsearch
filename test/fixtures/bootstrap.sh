@@ -29,7 +29,7 @@ curl -XPUT sensu-elasticsearch-7:9200/field_count_index
 echo
 echo "Create mapping for index field_count_index"
 echo
-curl --header 'Content-Type: application/json' -XPUT sensu-elasticsearch-7:9200/field_count_index/_mapping/test -d @- <<'EOF'
+curl --header 'Content-Type: application/json' -XPUT sensu-elasticsearch-7:9200/field_count_index/_mapping -d @- <<'EOF'
 {
 "properties": {
   "field1": {
