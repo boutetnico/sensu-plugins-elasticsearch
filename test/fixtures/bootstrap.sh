@@ -14,22 +14,22 @@ SIGN_GEM=false gem build sensu-plugins-elasticsearch.gemspec
 gem install sensu-plugins-elasticsearch-*.gem
 
 # hostnamectl
-if [ $(curl -sI -XGET elasticsearch:9200/field_count_index | grep -c '200 OK') -ne 0 ]; then
+if [ $(curl -sI -XGET sensu-elasticsearch-7:9200/field_count_index | grep -c '200 OK') -ne 0 ]; then
   # clean up existing index
   echo "Clean up existing index field_count_index"
-  curl -XDELETE elasticsearch:9200/field_count_index
+  curl -XDELETE sensu-elasticsearch-7:9200/field_count_index
   echo
 fi
 
 echo
 echo "Create index field_count_index"
 echo
-curl -XPUT elasticsearch:9200/field_count_index
+curl -XPUT sensu-elasticsearch-7:9200/field_count_index
 
 echo
 echo "Create mapping for index field_count_index"
 echo
-curl --header 'Content-Type: application/json' -XPUT elasticsearch:9200/field_count_index/_mapping/test -d @- <<'EOF'
+curl --header 'Content-Type: application/json' -XPUT sensu-elasticsearch-7:9200/field_count_index/_mapping/test -d @- <<'EOF'
 {
 "properties": {
   "field1": {

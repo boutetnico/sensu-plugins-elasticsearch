@@ -8,15 +8,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    services:
-      elasticsearch:
-        image: elasticsearch:7.7.1
-        ports:
-          - 9200:9200
-          - 9300:9300
-        options: -e="discovery.type=single-node" --health-cmd="curl http://localhost:9200/_cluster/health" --health-interval=10s  --health-timeout=5s --health-retries=10
-
     steps:
+
+      - name: Run ElasticSearch container for tests
+        run: docker run --name sensu-elasticsearch-7 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -d docker.elastic.co/elasticsearch/elasticsearch-oss:7.1.1
 
       - name: Clone repository
         uses: actions/checkout@v2
