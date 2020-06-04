@@ -1,0 +1,27 @@
+---
+name: Test
+
+on: [push]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Run ElasticSearch container for tests
+        run: docker run --name sensu-elasticsearch-7 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -d docker.elastic.co/elasticsearch/elasticsearch-oss:7.1.1
+
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.4'
+
+      - run: gem install bundler -v 2.1
+
+      - run: bundle install
+
+      - run: bundle exec rake quick

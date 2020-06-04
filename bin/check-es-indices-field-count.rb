@@ -97,7 +97,7 @@ class ESIndicesFieldCount < Sensu::Plugin::Check::CLI
 
   option :limit,
          description: 'Default number of fields limit to compare against.
-         Elasticsearch defaults this to 1000 if none is specied in index setting.',
+         Elasticsearch defaults this to 1000 if none is specified in index setting.',
          short: '-l',
          long: '--limit LIMIT',
          proc: proc(&:to_i),
