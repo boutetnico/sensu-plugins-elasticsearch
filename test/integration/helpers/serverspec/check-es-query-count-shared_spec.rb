@@ -18,5 +18,5 @@ describe command("#{check} --host #{host} -q '*' --minutes-previous 1") do
 end
 
 describe command("#{check} --host #{host} -q '*' --headers='Content-Type: application/x-www-form-urlencoded' --minutes-previous 1") do
-  its(:exit_status) { should eq 2 }
+  its(:exit_status) { should eq 3 }
 end
