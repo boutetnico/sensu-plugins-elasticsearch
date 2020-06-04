@@ -4,7 +4,7 @@ driver:
   use_sudo: false
   links:
     # TODO: multiple versions at some point
-    - elasticsearch:elasticsearch
+    - sensu-elasticsearch-7:sensu-elasticsearch-7
 
 provisioner:
   name: shell
