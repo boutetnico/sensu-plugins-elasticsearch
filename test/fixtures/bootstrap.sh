@@ -26,16 +26,6 @@ echo "Create index field_count_index"
 echo
 curl -XPUT sensu-elasticsearch-7:9200/field_count_index
 
-
-echo
-echo "Set field_count_index fields limit to 10"
-echo
-curl --header 'Content-Type: application/json' -XPUT sensu-elasticsearch-7:9200/field_count_index/_settings -d @- <<'EOF'
-{
-  "index.mapping.total_fields.limit": 10
-}
-EOF
-
 echo
 echo "Create mapping for index field_count_index"
 echo
