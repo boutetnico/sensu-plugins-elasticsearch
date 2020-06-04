@@ -44,7 +44,7 @@ When using `handler-es-delete-indices.rb` with Sensu Go, you will need to use th
 
 This repository uses the [Kitchen](https://kitchen.ci/) suite for it's tests.
 
-Note: The test suite uses an elasticsearch instance in order to have passing tests. Execute the following command to create a mock elasticsearch 6 instance:
+Note: The test suite uses an elasticsearch instance in order to have passing tests. Execute the following command to create a mock elasticsearch 7 instance:
 
 ```bash
 docker run -d --name sensu-elasticsearch-7 docker.elastic.co/elasticsearch/elasticsearch:7.1.1
