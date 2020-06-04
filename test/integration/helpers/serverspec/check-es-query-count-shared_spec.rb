@@ -6,7 +6,7 @@ require 'shared_spec'
 gem_path = '/usr/local/bin'
 check_name = 'check-es-query-count.rb'
 check = "#{gem_path}/#{check_name}"
-host = 'sensu-elasticsearch-6'
+host = 'elasticsearch'
 
 describe 'ruby environment' do
   it_behaves_like 'ruby checks', check
