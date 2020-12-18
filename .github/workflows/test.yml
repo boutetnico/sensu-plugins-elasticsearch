@@ -1,7 +1,13 @@
 ---
 name: Test
 
-on: [push]
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "33 3 * * 3"
 
 jobs:
   test:
@@ -11,7 +17,7 @@ jobs:
     steps:
 
       - name: Run ElasticSearch container for tests
-        run: docker run --name sensu-elasticsearch-7 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -d docker.elastic.co/elasticsearch/elasticsearch-oss:7.1.1
+        run: docker run --name sensu-elasticsearch-7 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -d docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.1
 
       - name: Clone repository
         uses: actions/checkout@v2
