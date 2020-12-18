@@ -52,3 +52,48 @@ Lint/UriEscapeUnescape:
 # TODO: switch from `DateTime` to `Time` or `Date`
 Style/DateTime:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false
+
+Lint/RedundantCopDisableDirective:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Lint/UselessMethodDefinition:
+  Enabled: false
+
+Style/RedundantFileExtensionInRequire:
+  Enabled: false
+
+Style/CaseLikeIf:
+  Enabled: false
+
+Style/StringConcatenation:
+  Enabled: false
+
+Style/RedundantReturn:
+  Enabled: false
+
+Style/RedundantAssignment:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Layout/SpaceInsideStringInterpolation:
+  Enabled: false
+
+Style/FloatDivision:
+  Enabled: false
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
