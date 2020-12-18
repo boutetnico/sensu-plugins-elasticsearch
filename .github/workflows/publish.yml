@@ -39,7 +39,7 @@ jobs:
 
       - run: bundle install
 
-      - run: bundle exec rake quick
+      - run: bundle exec rake default
 
       - run: gem build sensu-plugins-elasticsearch.gemspec
 
